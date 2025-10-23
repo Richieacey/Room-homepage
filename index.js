@@ -18,7 +18,6 @@ let mobileImage = document.querySelector('.mobile')
 let lightImage = document.querySelector('.about-light')
 
 
-
 let imageArray = new Array()
 
 imageArray[0] = new Image();
