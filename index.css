@@ -63,26 +63,6 @@
     height: 4.95rem;
 }
 
-.slide-left-mobile, .slide-right-mobile {
-    background-color: black;
-    padding-left: 1.3rem;
-    padding-right: 1.3rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    height: 2.7rem;
-    position: absolute;
-    display: none;
-}
-
-.slide-left-mobile {
-    bottom: 0rem;
-    right: 2rem
-}
-
-.slide-right-mobile {
-    bottom: 0rem;
-    right: 0rem;
-}
 
 .slide-left {
     position: absolute;
@@ -220,3 +200,161 @@ header {
     width: 90%;
 }
 
+/* ========================= */
+/* 📱 MOBILE STYLES */
+/* ========================= */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .first-container {
+    width: 100%;
+    position: relative;
+  }
+
+  .hero-image1 {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  header {
+    top: 2rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .logo {
+    width: 30%;
+    margin-right: 1rem;
+  }
+
+  .home, .shop, .about-link, .contact {
+    font-size: 1rem;
+    color: white;
+    border-bottom: none;
+  }
+
+  .slide-button {
+    display: none;
+  }
+
+  .slide-button-mobile {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .second-container0 {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    padding: 2rem 1.5rem;
+  }
+
+  .second-container {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .second-container > p {
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .shop-now {
+    margin-top: 1rem;
+  }
+
+  /* About section */
+  .about {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .about-dark,
+  .about-light {
+    width: 100%;
+    height: auto;
+  }
+
+  .about-text-container {
+    width: 100%;
+    padding: 2rem 1.5rem;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .slide-left-mobile, .slide-right-mobile {
+    background-color: black;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 2.7rem;
+    position: absolute;
+    display: flex;
+}
+
+    .slide-left-mobile {
+        bottom: 0rem;
+        right: 2rem
+    }
+
+    .slide-right-mobile {
+        bottom: 0rem;
+        right: 0rem;
+    }
+
+    .mobile {
+        display: flex;
+    }
+}
+
+/* ========================= */
+/* 💻 TABLET STYLES */
+/* ========================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .first-container, .second-container0 {
+    width: 100%;
+  }
+
+  .second-container0 {
+    padding: 3rem;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .about-dark, .about-light {
+    width: 100%;
+  }
+
+  header {
+    left: 2rem;
+    top: 2.5rem;
+  }
+}
