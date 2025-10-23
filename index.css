@@ -84,6 +84,11 @@
     cursor: pointer;
 }
 
+.slide-button-mobile {
+    display: none;
+}
+
+
 .slide-right:hover {
     background-color: hsl(0, 0%, 27%);
 }
@@ -97,12 +102,19 @@ header {
     left: 4rem;
 }
 
+.left-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 .home, .about-link, .shop, .contact {
     color: white;
     border-bottom-width: 0.24rem;
     border-bottom-style: solid;
     border-bottom-color: transparent;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .home:hover, .about-link:hover, .shop:hover, .contact:hover {
@@ -200,7 +212,7 @@ header {
     width: 90%;
 }
 
-.icon-hamburger {
+.icon-hamburger, .icon-close {
     display: none;
 }
 
@@ -229,28 +241,32 @@ header {
   }
 
   header {
-    top: 2rem;
-    left: 1.5rem;
-    right: 1.5rem;
+    top: 0;
+    left: 0;
     justify-content: center;
     align-items: center;
-    gap: 1.2rem;
+    padding: 2rem;
+    width: 100%;
   }
 
-  .icon-hamburger {
+  .icon-hamburger{
     display: block;
     padding-right: 20%;
   }
 
   .logo {
-    width: 25%;
+    width: 30%;
     margin-right: 6rem;
   }
 
   .home, .shop, .about-link, .contact {
-    font-size: 1rem;
-    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: black;
     border-bottom: none;
+  }
+
+  .left-header{
     display: none;
   }
 
