@@ -3,6 +3,8 @@ import Header from '../components/Header';
 export default function About() {
     return (
         <div className="about-page" style={{ display: 'flex', flexDirection: 'column', position: 'relative' }}>
+            {/* Adding a dark gradient behind the header so white text is always visible */}
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '150px', background: 'linear-gradient(to bottom, rgba(0,0,0,0.8), transparent)', zIndex: 99 }}></div>
             <Header />
 
             {/* Top Image acts as hero banner for navbar */}
@@ -23,7 +25,7 @@ export default function About() {
 
             {/* Bottom Image */}
             <div style={{ padding: '0 2rem 5rem 2rem', display: 'flex', justifyContent: 'center' }}>
-                <img className="about-light" src="/images/suchit-poojari-ljRiZl00n18-unsplash.jpg" alt="about-light" style={{ width: '100%', maxWidth: '1000px', height: 'auto', maxHeight: '600px', objectFit: 'cover', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+                <img className="about-light" src="/images/suchit-poojari-ljRiZl00n18-unsplash.jpg" alt="about-light" style={{ width: '100%', maxWidth: '800px', height: 'auto', maxHeight: '400px', objectFit: 'contain', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
             </div>
         </div>
     );
