@@ -1,34 +1,25 @@
 import { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="header" style={{ position: 'absolute', zIndex: 100, ...(isMenuOpen ? { backgroundColor: 'white', left: 0, top: 0, padding: '2rem', width: '100%', alignItems: 'center' } : {}) }}>
-            {!isMenuOpen && (
-                <img
-                    src="/images/icon-hamburger.svg"
-                    className="icon-hamburger"
-                    alt="menu"
-                    onClick={() => setIsMenuOpen(true)}
-                    style={{ display: 'none' }} // we'll rely on CSS media queries for display or inline if mobile
-                />
-            )}
+        <header className={`header ${isMenuOpen ? 'mobile-menu-active' : ''}`} style={{ position: 'absolute', zIndex: 100 }}>
+            {/* The hamburger or close icon */}
+            <img
+                src={isMenuOpen ? "/images/icon-close.svg" : "/images/icon-hamburger.svg"}
+                className={isMenuOpen ? "icon-close" : "icon-hamburger"}
+                alt={isMenuOpen ? "close menu" : "open menu"}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                style={isMenuOpen ? { display: 'block', marginRight: '2rem' } : {}}
+            />
 
-            {isMenuOpen && (
-                <img
-                    src="/images/icon-close.svg"
-                    className="icon-close"
-                    alt="close"
-                    onClick={() => setIsMenuOpen(false)}
-                    style={{ display: 'block' }}
-                />
-            )}
+            {/* Logo is hidden when menu is open */}
+            {!isMenuOpen && <img className="logo" src="/images/logo.svg" alt="logo" />}
 
-            <img className="logo" src="/images/logo.svg" alt="logo" style={isMenuOpen ? { display: 'none' } : {}} />
-
-            <div className="left-header" style={isMenuOpen ? { display: 'flex' } : {}}>
+            {/* Navigation Links */}
+            <div className={`left-header ${isMenuOpen ? 'open' : ''}`} style={isMenuOpen ? { display: 'flex', position: 'relative', top: 0, padding: 0, boxShadow: 'none' } : {}}>
                 <Link className="home" to="/" onClick={() => setIsMenuOpen(false)}>home</Link>
                 <Link className="shop" to="/shop" onClick={() => setIsMenuOpen(false)}>shop</Link>
                 <Link className="about-link" to="/about" onClick={() => setIsMenuOpen(false)}>about</Link>
